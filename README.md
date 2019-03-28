@@ -9,19 +9,16 @@ This project and its specs are part of the front end engineering curriculum at T
 
 If you'd like to play the game, clone this repository down to your computer and run the following command in your terminal:
 
-```bash
-git clone https://github.com/kalex19/HH-KL-Family-Feud.git```
+```git clone https://github.com/kalex19/HH-KL-Family-Feud.git```
 
 Then run the following command to install dependencies:
 
-```bash 
-npm install```
+```npm install```
 
 To start the app, run the following command in your terminal:
 
-```bash
-npm start
-```
+```npm start```
+
 Then go to http://localhost:8080/ in your browser to play!
 
 
