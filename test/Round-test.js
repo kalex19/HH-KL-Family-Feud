@@ -1,5 +1,6 @@
 import chai from 'chai';
 import spies from 'chai-spies';
+import Game from '../src/Game.js';
 import Round from '../src/Round.js';
 import Player from '../src/Player.js';
 import domUpdates from '../src/domUpdates.js';
@@ -59,29 +60,31 @@ describe('Round', function() {
    });
 
   it.skip('when a guess is incorrect, it should switch player turn', () => {
-    let round = new Round();
+    let player = new Player();
+    let round = new Round({});
     let game = new Game();
+    round.questionSet.answers = [{answer: 'watch'}]
 
+    round.checkAnswer('planner', player);
     game.switchPlayer(); 
-
-    assert.equal();
     expect(domUpdates.wrongAnswer).to.have.been.called(1);
    });
 
-   it.skip('should check input answer with survey question answer', () => {
-    let round = new Round();
+   it.skip('should alert player if no guess is entered', () => {
+    let player = new Player();
+    let round = new Round({});
+    round.questionSet.answers = [{answer: 'watch'}]
 
-    round.checkAnswer(); 
-
-    assert.equal();
+    round.checkAnswer('', player); 
+    expect(domUpdates.errorMessage).to.have.been.called(1);
    });
 
-   it.skip('should end the current round', () => {
+   it.skip('should end the current round after three correct answers', () => {
     let round = new Round();
 
-    round.endRound(); 
-
-    assert.equal();
+    assert.equal(round.answerCount, 3)
+    round.endRound();
+    assert.equal(round.answerCount, 0)
    });
 
 })
