@@ -17,6 +17,8 @@ describe('Round', function() {
     chai.spy.on(domUpdates, 'wrongAnswer', () => true);
     chai.spy.on(domUpdates, 'errorMessage', () => true);
     chai.spy.on(domUpdates, 'clearInputField', () => true);
+    chai.spy.on(domUpdates, 'highlightPlayer', () => true);
+    chai.spy.on(domUpdates, 'unhighlightPlayer', () => true);
   });
 
   afterEach(function() {
@@ -59,32 +61,54 @@ describe('Round', function() {
     expect(domUpdates.appendAnswer).to.have.been.called(1);
    });
 
-  it.skip('when a guess is incorrect, it should switch player turn', () => {
-    let player = new Player();
+  it('when a guess is incorrect, it should switch player turn', () => {
+    let player1 = new Player('katie', 1);
+    let player2 = new Player('hannah', 2);
     let round = new Round({});
     let game = new Game();
+    game.player1 = player1;
+    game.player2 = player2;
     round.questionSet.answers = [{answer: 'watch'}]
 
-    round.checkAnswer('planner', player);
-    game.switchPlayer(); 
+    round.checkAnswer('planner', player1, game);
+    game.switchPlayer(player1, player2); 
     expect(domUpdates.wrongAnswer).to.have.been.called(1);
    });
 
-   it.skip('should alert player if no guess is entered', () => {
-    let player = new Player();
+   it('should alert player if no guess is entered', () => {  
+    let player1 = new Player('katie', 1);
+    let player2 = new Player('hannah', 2);
+    let game = new Game();
     let round = new Round({});
+    game.player1 = player1;
+    game.player2 = player2;
     round.questionSet.answers = [{answer: 'watch'}]
 
-    round.checkAnswer('', player); 
+    round.checkAnswer('', player1, game); 
     expect(domUpdates.errorMessage).to.have.been.called(1);
    });
 
-   it.skip('should end the current round after three correct answers', () => {
-    let round = new Round();
+   it('should end the current round after three correct answers and reset the anser count', () => {
+    let round = new Round({});
+    let player = new Player();
+    let game = new Game();
+ 
+    round.questionSet.answers = [{answer: 'watch'}, {answer: 'alarm clock'}, {answer: 'calendar'}]
 
-    assert.equal(round.answerCount, 3)
-    round.endRound();
     assert.equal(round.answerCount, 0)
+
+    round.checkAnswer('watch', player);
+
+    assert.equal(round.answerCount, 1);
+
+    round.checkAnswer('alarm clock', player);
+
+    assert.equal(round.answerCount, 2);
+
+    round.checkAnswer('calendar', player);
+
+    assert.equal(round.answerCount, 0);
+  
    });
 
 })
