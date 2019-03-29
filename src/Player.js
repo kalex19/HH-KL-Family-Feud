@@ -13,8 +13,8 @@ class Player {
     }
 
     lightningScore(scoreAmt, multiplier) {
-        let newScore = this.score += (scoreAmt * multiplier);
-        domUpdates.changeScore(newScore, this.playerId);
+        this.score += (scoreAmt * multiplier);
+        domUpdates.changeScore(this.score, this.playerId);
     }
 }
 
