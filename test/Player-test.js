@@ -1,8 +1,8 @@
 import chai from 'chai';
 import spies from 'chai-spies';
-chai.use(spies);
-
 import Player from '../src/Player.js';
+
+chai.use(spies);
 
 
 const assert = chai.assert;
@@ -36,18 +36,23 @@ describe('Player', function() {
     let player = new Player('Hannah');
     let num = 5;
 
+    assert.equal(player.score, 0);
+
     player.addScore(num);
 
     assert.equal(player.score, 5);
   });
 
   it('should score points during lightning round', () => {
+
     let player = new Player('Katie');
     let num = 25;
 
-    player.lightningScore(num);
+    assert.equal(player.score, 0);
 
-    assert.equal(player.score, 25);
+    player.lightningScore(num, 2);
+
+    assert.equal(player.score, 50);
   });
 
-})
+});
