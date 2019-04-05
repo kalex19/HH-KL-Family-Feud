@@ -58,13 +58,13 @@ popUp() {
       $('#nameOne').css('width', '300px');
       $('#nameOne').css('height', '80px');
       $('#nameOne').css('border-radius', '1%');
-      $('#nameOne').css('box-shadow','inset 0 0 50px #fff, 0 0 50px red, -10px 0 80px blue, 10px 0 80px #fff');
+      $('#nameOne').css('box-shadow','inset 0 0 50px #fff, 0 0 50px orange, -10px 0 80px blue, 10px 0 80px #fff');
     }
     if (playerId === 2) {
       $('#nameTwo').css('width', '300px');
       $('#nameTwo').css('height', '80px');
       $('#nameTwo').css('border-radius', '1%');
-      $('#nameTwo').css('box-shadow','inset 0 0 50px #fff, 0 0 50px red, -10px 0 80px blue, 10px 0 80px #fff'); 
+      $('#nameTwo').css('box-shadow','inset 0 0 50px #fff, 0 0 50px orange, -10px 0 80px blue, 10px 0 80px #fff'); 
     } 
   },
 

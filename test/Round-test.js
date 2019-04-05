@@ -1,12 +1,22 @@
 import chai from 'chai';
 import spies from 'chai-spies';
-chai.use(spies);
-
+import Game from '../src/Game.js';
 import Round from '../src/Round.js';
+import Player from '../src/Player.js';
+import domUpdates from '../src/domUpdates.js';
 
+chai.use(spies);
 const assert = chai.assert;
+const expect = chai.expect;
 
 describe('Round', function() {
+
+  let methodArray = ['appendAnswer', 'wrongAnswer', 'errorMessage', 'clearInputField', 'highlightPlayer','unhighlightPlayer'];
+
+  beforeEach(function() {
+  chai.spy.on(domUpdates, 'methodArray' () => true);
+  });
+
   it('Round is a function', () => {
 
   assert.isFunction(Round);
@@ -18,49 +28,79 @@ describe('Round', function() {
     assert.instanceOf(round, Round); 
   });
 
+  it('should accept a random survey with answers', () => {
+     let round = new Round({});
 
-   it('should have empty array for surveys', () => {
-     let round = new Round();
-
-     assert.isArray(round.surveys);
+     round.questionSet.answers = [{answer: 'watch'}];
+     assert.deepEqual(round.questionSet.answers, [{answer: 'watch'}]);
    });
 
-   it('should have a correct answer default of zero', () => {
+  it('should have a correct answer default of zero', () => {
     let round = new Round();
 
-    assert.equal(round.correctAnswer, 0)
+    assert.equal(round.answerCount, 0)
    });
 
-   it.skip('should be able to get survey question', () => {
-    let round = new Round();
+  it('when a guess is correct, it should add to answer count and update the dom', () => {
+    let player = new Player();
+    let round = new Round({});
+    round.questionSet.answers = [{answer: 'watch'}]
+    assert.equal(round.answerCount, 0)
 
-    round.getSurvey();
+    round.checkAnswer('watch', player);
 
-    assert.equal();
+    assert.equal(round.answerCount, 1);
+    expect(domUpdates.appendAnswer).to.have.been.called(1);
    });
 
-   it.skip('should be able to get survey answer', () => {
-    let round = new Round();
+  it('when a guess is incorrect, it should switch player turn', () => {
+    let player1 = new Player('katie', 1);
+    let player2 = new Player('hannah', 2);
+    let round = new Round({});
+    let game = new Game();
+    game.player1 = player1;
+    game.player2 = player2;
+    round.questionSet.answers = [{answer: 'watch'}]
 
-    round.getAnswer(); 
-
-    assert.equal();
+    round.checkAnswer('planner', player1, game);
+    game.switchPlayer(player1, player2); 
+    expect(domUpdates.wrongAnswer).to.have.been.called(1);
    });
 
-   it.skip('should check input answer with survey question answer', () => {
-    let round = new Round();
+   it('should alert player if no guess is entered', () => {  
+    let player1 = new Player('katie', 1);
+    let player2 = new Player('hannah', 2);
+    let game = new Game();
+    let round = new Round({});
+    game.player1 = player1;
+    game.player2 = player2;
+    round.questionSet.answers = [{answer: 'watch'}]
 
-    round.checkAnswer(); 
-
-    assert.equal();
+    round.checkAnswer('', player1, game); 
+    expect(domUpdates.errorMessage).to.have.been.called(1);
    });
 
-   it.skip('should end the current round', () => {
-    let round = new Round();
+   it('should end the current round after three correct answers and reset the anser count', () => {
+    let round = new Round({});
+    let player = new Player();
+    let game = new Game();
+ 
+    round.questionSet.answers = [{answer: 'watch'}, {answer: 'alarm clock'}, {answer: 'calendar'}]
 
-    round.endRound(); 
+    assert.equal(round.answerCount, 0)
 
-    assert.equal();
+    round.checkAnswer('watch', player);
+
+    assert.equal(round.answerCount, 1);
+
+    round.checkAnswer('alarm clock', player);
+
+    assert.equal(round.answerCount, 2);
+
+    round.checkAnswer('calendar', player);
+
+    assert.equal(round.answerCount, 0);
+  
    });
 
 })

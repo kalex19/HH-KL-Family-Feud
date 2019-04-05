@@ -15,6 +15,8 @@ class Game {
     this.currentPlayer = null;
   }
 
+
+
   createPlayer(name1, name2) {
     this.player1 = new Player(name1, 1);
     domUpdates.highlightPlayer(this.player1.playerId);
@@ -57,6 +59,26 @@ class Game {
       domUpdates.unhighlightPlayer(!this.currentPlayer.playerId); 
       this.lightningRound = new LightningRound(survey, this.currentPlayer);
     }
+
+    //     switch(this.roundNumber) {
+    // case === 0:
+    // domUpdates.progressBar(this.roundNumber);
+    // break;
+    // case === 2:
+    // this.switchPlayer();
+    // break;
+    // case === 3:
+    // this.currentPlayer === this.player1;
+    // domUpdates.highlightPlayer(this.currentPlayer.playerId);
+    // domUpdates.unhighlightPlayer(!this.currentPlayer.playerId);
+    // this.lightningRound = new LightningRound(survey, this.currentPlayer);
+    // break;
+    // case === 4:
+    // this.switchPlayer();
+    // domUpdates.highlightPlayer(this.currentPlayer.playerId);
+    // domUpdates.unhighlightPlayer(!this.currentPlayer.playerId);
+    // this.lightningRound = new LightningRound(survey, this.currentPlayer);
+    // break;
   
     const question = survey.question;
     domUpdates.appendQuestion(question);
@@ -66,7 +88,7 @@ class Game {
     if (this.roundNumber < 3) {
       this.round.checkAnswer(guess, this.currentPlayer, this);
     } else {
-      this.lightningRound.checkLrAnswer(guess, this.currentPlayer, this);
+      this.lightningRound.checkAnswer(guess, this.currentPlayer, this);
     }
   }
 

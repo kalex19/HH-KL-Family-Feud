@@ -1,8 +1,8 @@
 import chai from 'chai';
 import spies from 'chai-spies';
-chai.use(spies);
-
 import Player from '../src/Player.js';
+
+chai.use(spies);
 
 
 const assert = chai.assert;
@@ -55,4 +55,4 @@ describe('Player', function() {
     assert.equal(player.score, 50);
   });
 
-})
+});

@@ -8,7 +8,7 @@ class LightningRound {
     this.answerCount = 0;
   }
 
-  checkLrAnswer(guess, currentPlayer, game) {
+  checkAnswer(guess, currentPlayer, game) {
     let answers = this.questionSet.answers;
     let score;
     domUpdates.clearInputField();

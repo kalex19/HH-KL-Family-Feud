@@ -33,7 +33,6 @@ class Round {
     game.createRound();
     this.answerCount = 0;
   }
-
 }
 
 export default Round;
