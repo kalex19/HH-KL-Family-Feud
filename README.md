@@ -4,6 +4,13 @@ This is a two player game based on the TV show ‘Family Feud’. Each game has 
 
 This project and its specs are part of the front end engineering curriculum at Turing School of Software and Design. The learning goals for this exercise were to introduce working with ES6 classes, manipulating datasets, working with Webpack and testing with Mocha and Chai.
 
+### Our Biggest Challenge
+
+Our biggest challenge with this project was designing tests with Mocha and Chai in a true TDD (test driven development) fashion.
+
+### Our Biggest Success
+
+Our biggest success was working as a team, being okay with failure, taking our time to plan and strategically work through each issue as it arose.
 
 ## Getting Started
 
@@ -21,20 +28,47 @@ To start the app, run the following command in your terminal:
 
 Then go to http://localhost:8080/ in your browser to play!
 
+## Technologies Used
 
-## Project Emphasis
+* HTML 
+* ES6 classes
+* CSS
+* JS
+* jQuery
+* Manipulating APIs
+* Testing with Mocha & Chai
+* Webpack
+* NPM
+* ESLint
 
- HTML & CSS
- JavaScript/jQuery
- Es6 classes
- Manipulating existing datasets
- Testing with Mocha & Chai
- Webpack
- NPM
- ESLint
+View the full project specification (user stories & other requirements) at <link> scr="http://frontend.turing.io/projects/module-2/game-time.html"</link>.
 
-View the full project specification (user stories & other requirements) at http://frontend.turing.io/projects/module-2/game-time.html.
+## Learning Goals
 
+* Write a program from scratch
+* Design and implement OOP patterns
+* Understand and implement ES6 classes
+* Implement array iterator and mutator methods to work with game data
+* Write modular, reusable code that follows SRP (Single Responibility Principle)
+* Create a robust test suite that thoroughly tests all functionality of a client-side application
 
-## Screenshots
+## Original Webpage
+
+<img src= width="400">
+
+## Project Screen Grab
+
+<img src= width="400">
+
+### Issues
+
+* 
+
+### Contributors
+
+* Katherine Lewis @kalex19
+* Hannah Hyde @
+
+### License
+Turing School of Software (for providing the project specifications).
 
