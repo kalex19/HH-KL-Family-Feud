@@ -67,7 +67,7 @@ View the full project specification (user stories & other requirements) at <link
 ### Contributors
 
 * Katherine Lewis @kalex19
-* Hannah Hyde @
+* Hannah Hyde @alizarincrimson 
 
 ### License
 Turing School of Software (for providing the project specifications).
