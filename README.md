@@ -10,7 +10,7 @@ Our biggest challenge with this project was designing tests with Mocha and Chai 
 
 ### Our Biggest Success
 
-Our biggest success was working as a team, being okay with failure, taking our time to plan and strategically work through each issue as it arose.
+Our biggest success was working as a team, being okay with failure, taking our time to plan and strategically work through each issue as it arose. Additionally, trying out new features such as the progress bar (above and beyond the comp) was a fun experience.
 
 ## Getting Started
 
@@ -54,7 +54,7 @@ View the full project specification (user stories & other requirements) at <link
 
 ## Original Webpage
 
-<img src="images/Begin Game.png" width="400">
+<img src= width="400">
 
 ## Project Screen Grab
 
@@ -62,7 +62,11 @@ View the full project specification (user stories & other requirements) at <link
 
 ### Issues
 
-* 
+* Webpage is not responsive
+* UI needs to be change so user input field and buttons are in the same view field as the questions
+* Question board needs to be reset upon change of round
+* Lightning round needs a 30 second timer for each player
+* Needs to end game after four rounds and declare a winner
 
 ### Contributors
 
