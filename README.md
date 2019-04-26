@@ -54,7 +54,7 @@ View the full project specification (user stories & other requirements) at <link
 
 ## Original Webpage
 
-<img src= width="400">
+<img src="images/Begin Game.png" width="400">
 
 ## Project Screen Grab
 
