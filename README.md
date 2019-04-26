@@ -1,4 +1,5 @@
-# Gametime  - Family Feud
+# Gametime: Mod 2
+## Family Feud
 
 This is a two player game based on the TV show ‘Family Feud’. Each game has three rounds, each of which comprises a survey question and the three top survey responses. The two players take turns guessing the answers until they are all correct, and points are accumulated based on the popularity of each response. The third round changes the gameplay to Lightning Round, which allots a players unlimited guesses for one survey questions for up to 30 seconds and awards double the points. Each player receives their own Lightning Round before the game ends and a winner is declared.
 
