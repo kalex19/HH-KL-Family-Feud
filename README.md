@@ -41,7 +41,7 @@ Then go to http://localhost:8080/ in your browser to play!
 * NPM
 * ESLint
 
-View the full project specification (user stories & other requirements) at <link> scr="http://frontend.turing.io/projects/module-2/game-time.html"</link>.
+View the full project specification (user stories & other requirements) at <link>http://frontend.turing.io/projects/module-2/game-time.html</link>.
 
 ## Learning Goals
 
