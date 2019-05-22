@@ -1,10 +1,9 @@
 # Gametime: Mod 2
 ## Family Feud
 
-This is a two player game based on the TV show ‘Family Feud’. Each game has three rounds, each of which comprises a survey question and the three top survey responses. The two players take turns guessing the answers until they are all correct, and points are accumulated based on the popularity of each response. The third round changes the gameplay to Lightning Round, which allots a players unlimited guesses for one survey questions for up to 30 seconds and awards double the points. Each player receives their own Lightning Round before the game ends and a winner is declared.
+This is a two player game based on the TV show ‘Family Feud’. Each game has three rounds, each of which includes a survey question and the top three survey responses. The two players take turns guessing the answers until they are all correct, and points are accumulated based on the popularity of each response. The third round changes the gameplay to Lightning Round, which allots a player unlimited guesses for one survey question for up to 30 seconds and awards double the points. Each player receives their own Lightning Round before the game ends and a winner is declared.
 
-This project and its specs are part of the front end engineering curriculum at Turing School of Software and Design. The learning goals for this exercise were to introduce working with ES6 classes, manipulating datasets, working with Webpack and testing with Mocha and Chai.
-
+This project and its specs are part of the front end engineering curriculum at Turing School of Software and Design. The learning goals for this exercise were to work with ES6 classes, manipulating datasets, Webpack and testing with Mocha and Chai.
 ### Our Biggest Challenge
 
 Our biggest challenge with this project was designing tests with Mocha and Chai in a true TDD (test driven development) fashion.
